@@ -2,8 +2,6 @@
 
 **Creds:** maintuser/pw
 
-[YouTube Link for Directions](https://www.youtube.com/watch?v=Afkp0aM8mmU&t=200s&ab_channel=MivoCloud)
-
 ## 1. Install OpenJDK
 Install OpenJDK Version 11
 
@@ -37,14 +35,14 @@ sudo systemctl status postgresql
 ```
 
 ## 3. Configure PostgreSQL
-This step we will configure PostgreSQL and its Database
+This step lets configure PostgreSQL and its Database
 
 ```bash
 # Log into shell
 sudo -u postgres psql
 
 # Perform Configs
-CREATE USER sonarqube WITH PASSWORD 'Password'; #Mivo
+CREATE USER sonarqube WITH PASSWORD 'Password'; #Choose Any and replace with 'Password'
 CREATE DATABASE sonarqube OWNER sonarqube;
 GRANT ALL PRIVILEGES ON DATABASE sonarqube TO sonarqube;
 
@@ -98,7 +96,7 @@ nano /opt/sonarqube/conf/sonar.properties
 
 # Modify jdbc
 sonar.jdbc.username=sonaruser
-sonar.jdbc.password=Mivo
+sonar.jdbc.password=Password 
 
 # Modify jdbc url
 sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
